@@ -3,6 +3,7 @@ from tqdm import tqdm
 import random
 from abc import ABC, abstractmethod
 import utils
+import os
 
 class PromptOptimizer(ABC):
     def __init__(self, args, evaluator_fn, scorer, max_threads=1, bf_eval=None):
@@ -70,7 +71,9 @@ class ProTeGi(PromptOptimizer):
         Wrap each reason with <START> and <END>
         """
         gradient_prompt = '\n'.join([line.lstrip() for line in gradient_prompt.split('\n')])
-        res = utils.chatgpt(gradient_prompt, n=n)
+        # res = utils.chatgpt(gradient_prompt, n=n)
+        res = utils.AzureGPT4()(gradient_prompt, n=n, desc='get_gradients')
+        utils.log_to_file(os.getenv("LOG_FILE"), f"Response in get gradients:\n{res}\n")
         feedbacks = []
         new_prompts = []
         for r in res:    
@@ -96,7 +99,11 @@ class ProTeGi(PromptOptimizer):
         The {steps_per_gradient} new prompts are:
         """
         transformation_prompt = '\n'.join([line.lstrip() for line in transformation_prompt.split('\n')])
-        res = utils.chatgpt(transformation_prompt, n=n)
+        # res = utils.chatgpt(transformation_prompt, n=n)
+        res = utils.AzureGPT4()(transformation_prompt,n=n, desc='apply_gradients')
+        utils.log_to_file(os.getenv("LOG_FILE"), f"Response in apply gradients:\n{res}\n")
+
+
         new_prompts = []
         for r in res:   
             new_prompts += self.parse_tagged_text(r, "<START>", "<END>")
@@ -105,7 +112,10 @@ class ProTeGi(PromptOptimizer):
     def generate_synonyms(self, prompt_section, n=3):
         """ Generate synonyms for a prompt section."""
         rewriter_prompt = f"Generate a variation of the following instruction while keeping the semantic meaning.\n\nInput: {prompt_section}\n\nOutput:"
-        new_instructions = utils.chatgpt(rewriter_prompt, n=n)
+        # new_instructions = utils.chatgpt(rewriter_prompt, n=n)
+        new_instructions = utils.AzureGPT4()(rewriter_prompt,n=n,  desc='apply_gradients')
+        utils.log_to_file(os.getenv("LOG_FILE"), f"Response in random:\n{new_instructions}\n")
+
         new_instructions = [x for x in new_instructions if x]
         return new_instructions
 
@@ -118,6 +128,7 @@ class ProTeGi(PromptOptimizer):
             gradients = self._get_gradients(
                 task_section, error_string, self.opt['gradients_per_error'], n=1)
             prompt_feedbacks += [(t, error_string) for t in gradients]
+        # import pdb; pdb.set_trace()
         return prompt_feedbacks
 
     def expand_candidates(self, prompts, task, gpt4, train_exs):
@@ -139,6 +150,7 @@ class ProTeGi(PromptOptimizer):
             if self.opt['n_gradients'] > 0:
                 gradients = self.get_gradients(prompt, task_section, task, gpt4, texts, labels, preds)
                 new_task_sections = []
+                # import pdb; pdb.set_trace() 
                 for feedback, error_string in tqdm(gradients, desc='applying gradients'):
                     tmp = self.apply_gradient(
                         task_section, error_string, feedback, self.opt['steps_per_gradient'])

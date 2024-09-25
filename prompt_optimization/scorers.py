@@ -20,15 +20,24 @@ class Cached01Scorer:
         def compute_scores(prompts_exs):
             out_scores = {}
             inputs = [(ex, predictor, prompt) for prompt, ex in prompts_exs]
-            with concurrent.futures.ProcessPoolExecutor(max_workers=max_threads) as executor:
-                futures = [executor.submit(predict_on_example, ex) for ex in inputs]
-                for i, future in tqdm(enumerate(concurrent.futures.as_completed(futures)), total=len(futures), desc='01 scorer'):
-                    prompt, ex, pred = future.result()            
-                    if pred == ex['label']:
-                        out_scores[f'{ex}-{prompt}'] = 1
-                    else:
-                        out_scores[f'{ex}-{prompt}'] = 0
+            ## vllm version (no parallelism)
+            for input in inputs:
+                prompt, ex, pred = predict_on_example(input)
+                if pred == ex['label']:
+                    out_scores[f'{ex}-{prompt}'] = 1
+                else:
+                    out_scores[f'{ex}-{prompt}'] = 0
             return out_scores
+
+            # with concurrent.futures.ProcessPoolExecutor(max_workers=max_threads) as executor:
+            #     futures = [executor.submit(predict_on_example, ex) for ex in inputs]
+            #     for i, future in tqdm(enumerate(concurrent.futures.as_completed(futures)), total=len(futures), desc='01 scorer'):
+            #         prompt, ex, pred = future.result()            
+            #         if pred == ex['label']:
+            #             out_scores[f'{ex}-{prompt}'] = 1
+            #         else:
+            #             out_scores[f'{ex}-{prompt}'] = 0
+            # return out_scores
 
         cached_scores = defaultdict(list)
         prompts_exs_to_compute = []
