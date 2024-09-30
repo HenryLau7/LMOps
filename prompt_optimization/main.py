@@ -135,7 +135,7 @@ if __name__ == '__main__':
     vllm = predictors.Vllm_predictor(
         model_path = vllm_model_path[args.eval_llm],
         max_tokens=3,
-        stop=None,
+        stop='\n',
         repetition_penalty=1.0,
         top_p=0.1,
         temperature=0,
@@ -163,7 +163,7 @@ if __name__ == '__main__':
     
 
     if args.task.startswith('BigBench'):
-        candidates = [open(f"/home/aiscuser/LMOps/prompt_optimization/prompts/BigBench/{sub_task}_2.md").read()]
+        candidates = [open(f"/home/aiscuser/LMOps/prompt_optimization/prompts/BigBench/{sub_task}.md").read()]
     else:
         candidates = [open(fp.strip()).read() for fp in args.prompts.split(',')]
 
@@ -191,7 +191,7 @@ if __name__ == '__main__':
         for candidate, score in zip(candidates, scores):
             f1, texts, labels, preds = task.evaluate(vllm, candidate, test_exs, n=args.n_test_exs)
             for text, label, pred in zip(texts, labels, preds):
-                log_to_file(args.out, f"== Prompt: {text}\n== Label: {task.stringify_prediction(label)}\n== Prediction: {task.stringify_prediction(pred)}== Score: {label==pred}\n")
+                log_to_file(args.out, f"== Prompt: {text}\n== Label: {label}\n== Prediction: {pred}\n== Score: {label==pred}\n")
             metrics.append(f1)
 
         # record candidates, estimated scores, and true scores

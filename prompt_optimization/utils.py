@@ -18,24 +18,48 @@ def log_to_file(filename, content, mode='a'):
     """
     with open(filename, mode) as outf:
         outf.write(content)
-        
-def parse_sectioned_prompt(s):
 
+
+def parse_sectioned_prompt(s):
     result = {}
     current_header = None
 
     for line in s.split('\n'):
         line = line.strip()
 
-        if line.startswith('# '):
-            # first word without punctuation
-            current_header = line[2:].strip().lower().split()[0]
+        # 检查是否以5个井号开头的标题
+        if line.startswith('##### '):
+            # 去掉井号，提取标题部分，并移除标点符号
+            current_header = line[5:].strip().lower().split()[0]
             current_header = current_header.translate(str.maketrans('', '', string.punctuation))
             result[current_header] = ''
         elif current_header is not None:
+            # 将当前行加入对应的标题内容
             result[current_header] += line + '\n'
 
+    # 去除每个部分内容末尾的多余换行符
+    for key in result:
+        result[key] = result[key].strip()
+
     return result
+
+# def parse_sectioned_prompt(s):
+
+#     result = {}
+#     current_header = None
+
+#     for line in s.split('\n'):
+#         line = line.strip()
+
+#         if line.startswith('# '):
+#             # first word without punctuation
+#             current_header = line[2:].strip().lower().split()[0]
+#             current_header = current_header.translate(str.maketrans('', '', string.punctuation))
+#             result[current_header] = ''
+#         elif current_header is not None:
+#             result[current_header] += line + '\n'
+
+#     return result
 
 class AzureGPT4():
     def __init__(self):

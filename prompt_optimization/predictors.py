@@ -43,11 +43,11 @@ class Vllm_predictor(ABC):
 
         sampling_params = SamplingParams(temperature=self.temperature, repetition_penalty=self.repetition_penalty, top_p=self.top_p, max_tokens=self.max_tokens, stop=self.stop)
         # print(sampling_params)
-        utils.log_to_file(os.getenv("LOG_FILE"), f"Sampling Params:\n{sampling_params}\n")
-        utils.log_to_file(os.getenv("LOG_FILE"), f"Prompt:\n{prompt}\n")
+        # utils.log_to_file(os.getenv("LOG_FILE"), f"Sampling Params:\n{sampling_params}\n")
+        # utils.log_to_file(os.getenv("LOG_FILE"), f"Prompt:\n{prompt}\n")
         
         response = self.llm.generate(prompt, sampling_params)[0].outputs[0].text
-
+        # import pdb; pdb.set_trace()
         # utils.log_to_file(os.getenv("LOG_FILE"), f"Response:\n{response}\n")
 
         file_name = os.getenv("GPT_CALL_OUT_FILE_NAME")
@@ -55,5 +55,7 @@ class Vllm_predictor(ABC):
             os.makedirs(os.path.dirname(file_name), exist_ok=True)
         utils.log_to_file(file_name, f"Vllm | Inference\n")
 
-        pred = 1 if response.strip().upper().startswith('YES') else 0
+        # pred = 1 if response.strip().upper().startswith('YES') else 0
+        correct_label = ['yes', 'correct', 'true', 'plausible']
+        pred = 1 if response.strip().lower() in correct_label else 0
         return pred

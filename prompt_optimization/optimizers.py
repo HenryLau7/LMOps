@@ -37,7 +37,7 @@ class ProTeGi(PromptOptimizer):
         error_idx = 0
         for i, (t, l, p) in enumerate(zip(sample_texts, sample_labels, sample_preds)):
             error_string += f'## Example {error_idx+1}\n'
-            error_string += f'Text: \"{t.strip()}\"\nLabel: {task.stringify_prediction(l)}\nPrediction: {task.stringify_prediction(p)}\n\n'
+            error_string += f'Text: \"{t.strip()}\"\nLabel: {l}\nPrediction: {p}\n\n'
             error_idx += 1
         return error_string.strip()
 
@@ -71,7 +71,6 @@ class ProTeGi(PromptOptimizer):
         Wrap each reason with <START> and <END>
         """
         gradient_prompt = '\n'.join([line.lstrip() for line in gradient_prompt.split('\n')])
-        # res = utils.chatgpt(gradient_prompt, n=n)
         res = utils.AzureGPT4()(gradient_prompt, n=n, desc='get_gradients')
         utils.log_to_file(os.getenv("LOG_FILE"), f"Response in get gradients:\n{res}\n")
         feedbacks = []

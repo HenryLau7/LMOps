@@ -23,7 +23,7 @@ for task in all_task_id:
         label = item['output']
         train_data.append({
             # "label": 1 if label == "yes" else 0,  # 假设'yes'为1，'no'为0
-            "label": 1 if label in correct_label else 0, 
+            "label": 1 if label.lower() in correct_label else 0, 
             "text": input_text
         })
 
@@ -34,7 +34,7 @@ for task in all_task_id:
         # 将数据按所需格式添加到train_data
         val_data.append({
             # "label": 1 if label == "yes" else 0,  # 假设'yes'为1，'no'为0
-            "label": 1 if label in correct_label else 0, 
+            "label": 1 if label.lower() in correct_label else 0, 
             "text": input_text
         })
 
@@ -46,19 +46,19 @@ for task in all_task_id:
         label = item['output']
         # 将数据按所需格式添加到test_data
         test_data.append({
-            "label": 1 if label in correct_label else 0, 
+            "label": 1 if label.lower() in correct_label else 0, 
             "text": input_text
         })
 
 
-    # with open(f'{data_path}train.jsonl', 'w') as f_train:
-    #     for entry in train_data:
-    #         f_train.write(json.dumps(entry) + '\n')
+    with open(f'{data_path}train.jsonl', 'w') as f_train:
+        for entry in train_data:
+            f_train.write(json.dumps(entry) + '\n')
 
     with open(f'{data_path}val.jsonl', 'w') as f_val:
         for entry in val_data:
             f_val.write(json.dumps(entry) + '\n')
 
-    # with open(f'{data_path}test.jsonl', 'w') as f_test:
-    #     for entry in test_data:
-    #         f_test.write(json.dumps(entry) + '\n')
+    with open(f'{data_path}test.jsonl', 'w') as f_test:
+        for entry in test_data:
+            f_test.write(json.dumps(entry) + '\n')

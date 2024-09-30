@@ -1,50 +1,50 @@
-{"label": 0, "text": "Turn right. Take 2 steps. Take 3 steps. Turn around. Take 2 steps. Take 3 steps."}
+{"label": 1, "text": "Turn right. Take 2 steps. Take 3 steps. Turn around. Take 2 steps. Take 3 steps."}
 {"label": 0, "text": "Always face forward. Take 3 steps forward. Take 9 steps left. Take 1 step right. Take 9 steps left."}
-{"label": 0, "text": "Take 5 steps. Take 2 steps. Take 1 step. Take 7 steps. Turn left. Turn right. Turn around. Take 7 steps. Take 8 steps."}
-{"label": 0, "text": "Turn left. Take 3 steps. Take 6 steps. Turn right. Turn right. Take 9 steps."}
-{"label": 0, "text": "Turn around. Take 2 steps. Turn right. Turn right. Take 2 steps."}
+{"label": 1, "text": "Take 5 steps. Take 2 steps. Take 1 step. Take 7 steps. Turn left. Turn right. Turn around. Take 7 steps. Take 8 steps."}
+{"label": 1, "text": "Turn left. Take 3 steps. Take 6 steps. Turn right. Turn right. Take 9 steps."}
+{"label": 1, "text": "Turn around. Take 2 steps. Turn right. Turn right. Take 2 steps."}
 {"label": 0, "text": "Take 2 steps. Turn right. Take 8 steps. Take 2 steps."}
 {"label": 0, "text": "Always face forward. Take 7 steps right. Take 1 step left."}
 {"label": 0, "text": "Always face forward. Take 8 steps left. Take 4 steps right. Take 9 steps forward. Take 4 steps left. Take 6 steps backward. Take 6 steps backward."}
-{"label": 0, "text": "Take 8 steps. Turn around. Take 8 steps. Turn right."}
-{"label": 0, "text": "Always face forward. Take 2 steps backward. Take 2 steps right. Take 2 steps forward. Take 6 steps left. Take 4 steps right."}
+{"label": 1, "text": "Take 8 steps. Turn around. Take 8 steps. Turn right."}
+{"label": 1, "text": "Always face forward. Take 2 steps backward. Take 2 steps right. Take 2 steps forward. Take 6 steps left. Take 4 steps right."}
 {"label": 0, "text": "Turn around. Turn around. Take 2 steps. Turn around. Take 7 steps."}
-{"label": 0, "text": "Always face forward. Take 10 steps left. Take 6 steps right. Take 4 steps right."}
-{"label": 0, "text": "Take 1 step. Take 2 steps. Take 3 steps. Turn around. Take 6 steps. Turn left."}
-{"label": 0, "text": "Take 4 steps. Turn around. Take 4 steps. Turn around."}
+{"label": 1, "text": "Always face forward. Take 10 steps left. Take 6 steps right. Take 4 steps right."}
+{"label": 1, "text": "Take 1 step. Take 2 steps. Take 3 steps. Turn around. Take 6 steps. Turn left."}
+{"label": 1, "text": "Take 4 steps. Turn around. Take 4 steps. Turn around."}
 {"label": 0, "text": "Take 7 steps. Take 8 steps. Take 3 steps. Take 2 steps. Turn left."}
 {"label": 0, "text": "Always face forward. Take 10 steps forward. Take 6 steps forward. Take 5 steps backward. Take 7 steps forward."}
-{"label": 0, "text": "Take 3 steps. Take 6 steps. Turn around. Take 9 steps. Turn left."}
-{"label": 0, "text": "Always face forward. Take 6 steps right. Take 6 steps left."}
+{"label": 1, "text": "Take 3 steps. Take 6 steps. Turn around. Take 9 steps. Turn left."}
+{"label": 1, "text": "Always face forward. Take 6 steps right. Take 6 steps left."}
 {"label": 0, "text": "Always face forward. Take 1 step forward. Take 10 steps forward. Take 7 steps backward."}
-{"label": 0, "text": "Take 8 steps. Take 3 steps. Take 9 steps. Turn around. Take 1 step. Take 9 steps. Take 10 steps."}
-{"label": 0, "text": "Always face forward. Take 8 steps left. Take 2 steps right. Take 10 steps right. Take 4 steps left."}
-{"label": 0, "text": "Take 3 steps. Take 4 steps. Turn around. Take 3 steps. Take 1 step. Take 3 steps. Turn right."}
+{"label": 1, "text": "Take 8 steps. Take 3 steps. Take 9 steps. Turn around. Take 1 step. Take 9 steps. Take 10 steps."}
+{"label": 1, "text": "Always face forward. Take 8 steps left. Take 2 steps right. Take 10 steps right. Take 4 steps left."}
+{"label": 1, "text": "Take 3 steps. Take 4 steps. Turn around. Take 3 steps. Take 1 step. Take 3 steps. Turn right."}
 {"label": 0, "text": "Take 4 steps. Turn right. Take 3 steps. Take 8 steps."}
-{"label": 0, "text": "Always face forward. Take 1 step backward. Take 4 steps forward. Take 1 step backward. Take 10 steps forward. Take 10 steps backward. Take 1 step backward. Take 1 step forward. Take 2 steps backward."}
-{"label": 0, "text": "Turn left. Turn left. Take 7 steps. Turn around. Take 7 steps. Turn left."}
-{"label": 0, "text": "Always face forward. Take 5 steps left. Take 1 step forward. Take 9 steps right. Take 3 steps backward. Take 2 steps forward. Take 4 steps left."}
-{"label": 0, "text": "Always face forward. Take 4 steps backward. Take 8 steps forward. Take 4 steps backward."}
+{"label": 1, "text": "Always face forward. Take 1 step backward. Take 4 steps forward. Take 1 step backward. Take 10 steps forward. Take 10 steps backward. Take 1 step backward. Take 1 step forward. Take 2 steps backward."}
+{"label": 1, "text": "Turn left. Turn left. Take 7 steps. Turn around. Take 7 steps. Turn left."}
+{"label": 1, "text": "Always face forward. Take 5 steps left. Take 1 step forward. Take 9 steps right. Take 3 steps backward. Take 2 steps forward. Take 4 steps left."}
+{"label": 1, "text": "Always face forward. Take 4 steps backward. Take 8 steps forward. Take 4 steps backward."}
 {"label": 0, "text": "Always face forward. Take 6 steps backward. Take 6 steps left. Take 3 steps forward. Take 7 steps forward."}
 {"label": 0, "text": "Take 4 steps. Take 3 steps. Take 9 steps. Take 9 steps. Turn left. Take 4 steps."}
 {"label": 0, "text": "Take 9 steps. Take 9 steps. Take 4 steps. Turn right."}
 {"label": 0, "text": "Take 10 steps. Take 1 step. Take 2 steps. Turn around."}
-{"label": 0, "text": "Always face forward. Take 6 steps forward. Take 6 steps backward. Take 4 steps right. Take 4 steps left. Take 3 steps forward. Take 7 steps forward. Take 10 steps backward."}
-{"label": 0, "text": "Take 8 steps. Take 1 step. Take 3 steps. Turn around. Take 10 steps. Take 1 step. Take 1 step."}
+{"label": 1, "text": "Always face forward. Take 6 steps forward. Take 6 steps backward. Take 4 steps right. Take 4 steps left. Take 3 steps forward. Take 7 steps forward. Take 10 steps backward."}
+{"label": 1, "text": "Take 8 steps. Take 1 step. Take 3 steps. Turn around. Take 10 steps. Take 1 step. Take 1 step."}
 {"label": 0, "text": "Take 6 steps. Take 9 steps. Turn right. Turn around. Turn around. Turn left. Take 7 steps."}
 {"label": 0, "text": "Always face forward. Take 10 steps forward. Take 9 steps left. Take 5 steps right. Take 5 steps backward."}
-{"label": 0, "text": "Always face forward. Take 4 steps right. Take 9 steps left. Take 7 steps backward. Take 7 steps forward. Take 3 steps right. Take 2 steps right."}
+{"label": 1, "text": "Always face forward. Take 4 steps right. Take 9 steps left. Take 7 steps backward. Take 7 steps forward. Take 3 steps right. Take 2 steps right."}
 {"label": 0, "text": "Always face forward. Take 9 steps forward. Take 9 steps backward. Take 4 steps left. Take 6 steps right. Take 9 steps backward."}
 {"label": 0, "text": "Take 2 steps. Take 5 steps. Take 10 steps. Take 2 steps."}
 {"label": 0, "text": "Always face forward. Take 9 steps forward. Take 10 steps forward. Take 3 steps right."}
 {"label": 0, "text": "Turn left. Take 7 steps. Turn right. Turn right."}
 {"label": 0, "text": "Always face forward. Take 6 steps right. Take 3 steps right."}
-{"label": 0, "text": "Always face forward. Take 8 steps backward. Take 4 steps forward. Take 4 steps forward."}
+{"label": 1, "text": "Always face forward. Take 8 steps backward. Take 4 steps forward. Take 4 steps forward."}
 {"label": 0, "text": "Take 5 steps. Take 7 steps. Take 9 steps. Take 3 steps. Take 8 steps. Take 2 steps."}
 {"label": 0, "text": "Always face forward. Take 4 steps right. Take 10 steps left. Take 1 step right. Take 9 steps left. Take 7 steps backward. Take 5 steps left."}
-{"label": 0, "text": "Take 4 steps. Take 3 steps. Turn around. Take 7 steps."}
-{"label": 0, "text": "Take 7 steps. Turn right. Turn right. Take 10 steps. Take 1 step. Take 5 steps. Turn around. Take 5 steps. Take 4 steps."}
-{"label": 0, "text": "Take 2 steps. Turn around. Take 2 steps. Turn right."}
-{"label": 0, "text": "Always face forward. Take 4 steps backward. Take 7 steps left. Take 7 steps forward. Take 3 steps forward. Take 10 steps right. Take 1 step right. Take 5 steps backward. Take 4 steps left. Take 1 step backward."}
+{"label": 1, "text": "Take 4 steps. Take 3 steps. Turn around. Take 7 steps."}
+{"label": 1, "text": "Take 7 steps. Turn right. Turn right. Take 10 steps. Take 1 step. Take 5 steps. Turn around. Take 5 steps. Take 4 steps."}
+{"label": 1, "text": "Take 2 steps. Turn around. Take 2 steps. Turn right."}
+{"label": 1, "text": "Always face forward. Take 4 steps backward. Take 7 steps left. Take 7 steps forward. Take 3 steps forward. Take 10 steps right. Take 1 step right. Take 5 steps backward. Take 4 steps left. Take 1 step backward."}
 {"label": 0, "text": "Always face forward. Take 3 steps right. Take 10 steps left. Take 10 steps backward. Take 4 steps left. Take 1 step forward."}
-{"label": 0, "text": "Take 3 steps. Take 9 steps. Turn left. Turn left. Take 2 steps. Take 8 steps. Take 2 steps. Turn left. Turn right."}
+{"label": 1, "text": "Take 3 steps. Take 9 steps. Turn left. Turn left. Take 2 steps. Take 8 steps. Take 2 steps. Turn left. Turn right."}
